@@ -15,7 +15,7 @@ f(x) = \left\{ \begin{array}{ll}
 \\
 \displaystyle
 \frac {\displaystyle \delta^{1 / \lambda}}{\displaystyle \Gamma (1 + 1 / \lambda)}
-\exp \left[ -\frac {\delta}{(1 - a)^\lambda} |x|^\lambda \right], & \mbox{if \eqn{x > 0},}
+\exp \left[ -\frac {\delta}{(1 - a)^\lambda} |x|^\lambda \right], & \mbox{if $x > 0$,}
 \end{array}
 \right.
 \\
@@ -27,7 +27,7 @@ a - a {\cal I} \left( \frac {\delta}{a^\lambda} \sqrt{\lambda} |x|^\lambda, 1 / 
 \\
 \displaystyle
 a - (1 - a) {\cal I} \left( \frac {\delta}{(1 - a)^\lambda}
-\sqrt{\lambda} |x|^\lambda, 1 / \lambda \right), & \mbox{if \eqn{x > 0},}
+\sqrt{\lambda} |x|^\lambda, 1 / \lambda \right), & \mbox{if $x > 0$,}
 \end{array}
 \right.
 \\
@@ -84,11 +84,11 @@ esasypower(p, a=0.5, lambda=1, delta=1)
   \item{lower.tail}{if FALSE then 1-cdf are returned and quantiles are computed for 1-p}
 }
 \value{An object of the same length as \code{x}, giving the pdf or cdf values computed at \code{x} or an object of the same length as \code{p}, giving the values at risk or expected shortfall computed at \code{p}.}
-\references{S. Nadarajah, S. Chan and E. Afuecheta, An R Package for value at risk and expected shortfall, submitted}
+\references{Stephen Chan, Saralees Nadarajah & Emmanuel Afuecheta (2016). An R Package for Value at Risk and Expected Shortfall, Communications in Statistics - Simulation and Computation, 45:9, 3416-3434, \doi{10.1080/03610918.2014.944658}}
 \author{Saralees Nadarajah}
 \examples{x=runif(10,min=0,max=1)
 dasypower(x)
 pasypower(x)
 varasypower(x)
 esasypower(x)}
-\keyword{Value at risk, expected shortfall}
+

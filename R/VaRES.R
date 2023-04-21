@@ -2001,7 +2001,15 @@ eslogcauchy=function (p, mu=0, sigma=1)
 {
 	f=function (x) {varlogcauchy(x,mu=mu,sigma=sigma)}
         es=p
-        for (i in 1:length(p)) {es[i]=(1/p[i])*integrate(f,lower=0,upper=p[i],stop.on.error=FALSE)$value}
+        for (i in 1:length(p)) {
+         integ=try((1/p[i])*integrate(f,lower=0,upper=p[i],stop.on.error=FALSE)$value, silent = TRUE)
+         
+         if(inherits(integ, "try-error")){
+            es[i] <- Inf
+         } else{
+            es[i] <- integ
+         }
+   }
 	return(es)
 }
 
@@ -3169,11 +3177,19 @@ vargumbel2=function (p, a=1, b=1, log.p=FALSE, lower.tail=TRUE)
 	return(var)
 }
 
-esgumbel2=function (p, a=1, b=1)
-{
+esgumbel2=function (p, a=1, b=1){
 	f=function (x) {vargumbel2(x,a=a,b=b)}
         es=p
-        for (i in 1:length(p)) {es[i]=(1/p[i])*integrate(f,lower=0,upper=p[i],stop.on.error=FALSE)$value}
+        for (i in 1:length(p)) {
+           integ=try((1/p[i])*integrate(f,lower=0,upper=p[i],stop.on.error=FALSE)$value, silent = TRUE)
+           if(inherits(integ, "try-error")){
+              es[i] <- Inf
+           } else{
+              es[i] <- integ
+           }
+           
+           
+           }
 	return(es)
 }
 
@@ -3207,7 +3223,14 @@ esbetagumbel2=function (p, a=1, b=1, c=1, d=1)
 {
 	f=function (x) {varbetagumbel2(x,a=a,b=b,c=c,d=d)}
         es=p
-        for (i in 1:length(p)) {es[i]=(1/p[i])*integrate(f,lower=0,upper=p[i],stop.on.error=FALSE)$value}
+        for (i in 1:length(p)) {
+        integ=try((1/p[i])*integrate(f,lower=0,upper=p[i],stop.on.error=FALSE)$value, silent = TRUE)
+        if(inherits(integ, "try-error")){
+         es[i] <- Inf
+        } else{
+         es[i] <- integ
+        }
+        }
 	return(es)
 }
 

@@ -18,7 +18,7 @@ f (x) = \left\{
 \displaystyle
 \frac {1 - \alpha}{1 - \alpha^{*}} K \left( \nu_2 \right)
 \left[ 1 + \frac {1}{\nu_2} \left( \frac {x}{2 \left( 1 - \alpha^{*} \right)} \right)^2 \right]^{-\frac {\nu_2 + 1}{2}}, &
-\mbox{if \eqn{x > 0},}
+\mbox{if $x > 0$,}
 \end{array}
 \right.
 \\
@@ -58,11 +58,11 @@ esast(p, nu1=1, nu2=1, alpha=0.5)
   \item{lower.tail}{if FALSE then 1-cdf are returned and quantiles are computed for 1-p}
 }
 \value{An object of the same length as \code{x}, giving the pdf or cdf values computed at \code{x} or an object of the same length as \code{p}, giving the values at risk or expected shortfall computed at \code{p}.}
-\references{S. Nadarajah, S. Chan and E. Afuecheta, An R Package for value at risk and expected shortfall, submitted}
+\references{Stephen Chan, Saralees Nadarajah & Emmanuel Afuecheta (2016). An R Package for Value at Risk and Expected Shortfall, Communications in Statistics - Simulation and Computation, 45:9, 3416-3434, \doi{10.1080/03610918.2014.944658}}
 \author{Saralees Nadarajah}
 \examples{x=runif(10,min=0,max=1)
 dast(x)
 past(x)
 varast(x)
 esast(x)}
-\keyword{Value at risk, expected shortfall}
+ 
